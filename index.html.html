@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab Virtualisasi Online | Sewa Akses VM Praktek IT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      animation: fadeSlideUp 0.8s ease;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease-in-out;
+      animation: fadeZoomIn 0.6s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      animation: fadeSlideUp 0.6s ease;
+    }
+    .tab-button {
+      background-color: #e0e7ff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1e3a8a;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+    .tab-button.active,
+    .tab-button:hover {
+      background-color: #4338ca;
+      color: white;
+    }
+    .tab-content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+    h2 {
+      color: #1e3a8a;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #2563eb;
+    }
+    .cta {
+      background-color: #2563eb;
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-size: 1rem;
+      animation: fadeSlideUp 0.7s ease;
+    }
+    .cta a {
+      color: white;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    /* Animations */
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeZoomIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lab Virtualisasi Online</h1>
+    <p>Akses server untuk latihan IT, Skill On. Budget Safe</p>
+  </header>
+
+  <main>
+    <nav class="tabs">
+      <button class="tab-button active" onclick="showTab('tentang')"><i class="fas fa-info-circle"></i> Tentang</button>
+      <button class="tab-button" onclick="showTab('paket')"><i class="fas fa-box"></i> Paket</button>
+      <button class="tab-button" onclick="showTab('fitur')"><i class="fas fa-star"></i> Fitur</button>
+      <button class="tab-button" onclick="showTab('akses')"><i class="fas fa-clock"></i> Jam Akses</button>
+    </nav>
+
+    <section class="card tab-content active" id="tentang">
+      <h2><i class="fas fa-info-circle"></i> Tentang Kami</h2>
+      <p>Kami menyediakan akses ke virtual machine (VM) berbasis server enterprise. Cocok untuk pelatihan IT, tugas akhir, atau simulasi jaringan.</p>
+    </section>
+
+    <section class="card tab-content" id="paket">
+      <h2><i class="fas fa-box"></i> Paket Layanan</h2>
+      <ul>
+        <li><i class="fas fa-laptop-code"></i> VM Ubuntu / Debian – Rp 30.000/minggu</li>
+        <li><i class="fab fa-windows"></i> VM Windows Server – Rp 75.000/bulan</li>
+        <li><i class="fas fa-server"></i> Lab Proxmox 4c+16GB+50GB – Rp 100.000/minggu</li>
+        <li><i class="fas fa-project-diagram"></i> Simulasi Topologi Jaringan (3–5 VM) – Rp 100.000/pekan</li>
+        <li><i class="fas fa-folder-open"></i> Custom Lab untuk Tugas / Bootcamp – Mulai Rp 150.000</li>
+      </ul>
+    </section>
+
+    <section class="card tab-content" id="fitur">
+      <h2><i class="fas fa-star"></i> Fitur Unggulan</h2>
+      <ul>
+        <li><i class="fas fa-network-wired"></i> Akses full via RDP / VPN</li>
+        <li><i class="fas fa-sync-alt"></i> Snapshot otomatis (reset harian)</li>
+        <li><i class="fas fa-layer-group"></i> Jaringan virtual: NAT, Bridge, VLAN</li>
+        <li><i class="fas fa-sliders-h"></i> Custom resource (CPU/RAM/Disk) sesuai kebutuhan</li>
+      </ul>
+    </section>
+
+    <section class="card tab-content" id="akses">
+      <h2><i class="fas fa-clock"></i> Ketentuan Akses VM</h2>
+      <ul>
+        <li>Senin – Jumat: <strong>07.00 – 22.00 WIB</strong></li>
+        <li>Sabtu – Minggu: <strong>09.00 – 24.00 WIB</strong></li>
+      </ul>
+    </section>
+
+    <div class="cta">
+      <p><strong>Siap praktek langsung?</strong></p>
+      <p>
+        Hubungi kami via <a href="https://wa.me/6285225523593"><strong>WhatsApp</strong></a>
+        atau isi <a href="https://forms.gle/yourform"><strong>Form Pemesanan</strong></a> sekarang.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Hamzuy | Dijalankan menggunakan server kami
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+      tabs.forEach(t => t.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+    window.onload = function() {
+      document.getElementById('tentang').classList.add('active');
+    };
+  </script>
+</body>
+</html>
