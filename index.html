@@ -19,15 +19,6 @@
       color: white;
       padding: 3rem 1rem;
       text-align: center;
-      animation: fadeSlideUp 0.8s ease;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin: 0;
     }
     main {
       max-width: 960px;
@@ -40,47 +31,6 @@
       padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease-in-out;
-      animation: fadeZoomIn 0.6s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      animation: fadeSlideUp 0.6s ease;
-    }
-    .tab-button {
-      background-color: #e0e7ff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 9999px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #1e3a8a;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-    .tab-button.active,
-    .tab-button:hover {
-      background-color: #4338ca;
-      color: white;
-    }
-    .tab-content {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease;
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
     }
     h1, h2 {
       font-weight: 700;
@@ -104,7 +54,6 @@
       border-radius: 1rem;
       text-align: center;
       font-size: 1rem;
-      animation: fadeSlideUp 0.7s ease;
     }
     .cta a {
       color: white;
@@ -117,16 +66,6 @@
       font-size: 0.875rem;
       color: #6b7280;
     }
-
-    /* Animations */
-    @keyframes fadeSlideUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeZoomIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
   </style>
 </head>
 <body>
@@ -136,19 +75,12 @@
   </header>
 
   <main>
-    <nav class="tabs">
-      <button class="tab-button active" onclick="showTab('tentang')"><i class="fas fa-info-circle"></i> Tentang</button>
-      <button class="tab-button" onclick="showTab('paket')"><i class="fas fa-box"></i> Paket</button>
-      <button class="tab-button" onclick="showTab('fitur')"><i class="fas fa-star"></i> Fitur</button>
-      <button class="tab-button" onclick="showTab('akses')"><i class="fas fa-clock"></i> Jam Akses</button>
-    </nav>
-
-    <section class="card tab-content active" id="tentang">
+    <section class="card">
       <h2><i class="fas fa-info-circle"></i> Tentang Kami</h2>
       <p>Kami menyediakan akses ke virtual machine (VM) berbasis server enterprise. Cocok untuk pelatihan IT, tugas akhir, atau simulasi jaringan.</p>
     </section>
 
-    <section class="card tab-content" id="paket">
+    <section class="card">
       <h2><i class="fas fa-box"></i> Paket Layanan</h2>
       <ul>
         <li><i class="fas fa-laptop-code"></i> VM Ubuntu / Debian – Rp 30.000/minggu</li>
@@ -159,7 +91,7 @@
       </ul>
     </section>
 
-    <section class="card tab-content" id="fitur">
+    <section class="card">
       <h2><i class="fas fa-star"></i> Fitur Unggulan</h2>
       <ul>
         <li><i class="fas fa-network-wired"></i> Akses full via RDP / VPN</li>
@@ -169,7 +101,7 @@
       </ul>
     </section>
 
-    <section class="card tab-content" id="akses">
+    <section class="card">
       <h2><i class="fas fa-clock"></i> Ketentuan Akses VM</h2>
       <ul>
         <li>Senin – Jumat: <strong>07.00 – 22.00 WIB</strong></li>
@@ -189,19 +121,5 @@
   <footer>
     &copy; 2025 Hamzuy | Dijalankan menggunakan server kami
   </footer>
-
-  <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-button');
-      tabs.forEach(t => t.classList.remove('active'));
-      buttons.forEach(b => b.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
-    }
-    window.onload = function() {
-      document.getElementById('tentang').classList.add('active');
-    };
-  </script>
 </body>
 </html>
